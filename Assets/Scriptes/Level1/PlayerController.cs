@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public int health =1;
     public int currentScene = 1;
     public GameObject deadUi;
+    public int currentBaby = 0;
+
     
     void PlayerMovement()
     {

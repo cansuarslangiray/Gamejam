@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,15 +14,19 @@ public class RollingEnemy : MonoBehaviour
     private void Start()
     {
         _player = GameObject.Find("Player");
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+  
+  
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.transform.CompareTag("Player"))
         {
             col.transform.GetComponent<PlayerController>().TakeDamage(damage);
         }
     }
+
     void Movement()
     {
         transform.Translate(Vector3.down*speed*Time.deltaTime);

@@ -1,22 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalBabies : MonoBehaviour
+public class CrawlingBabies : MonoBehaviour
 {
-    public int health = 1;
+    public float horizontalSpeed;
+    public bool isRight;
+    public int health = 2;
     public float speed;
     private GameObject _player;
     public CapsuleCollider2D cd;
     public float turnSpeed;
     public bool hasCollided = true;
-    public float babyDistance = 0.1f;
 
     private void Start()
     {
         _player = GameObject.Find("Player");
         cd = GetComponent<CapsuleCollider2D>();
+
     }
     
     private void OnTriggerEnter2D(Collider2D col)
@@ -32,20 +33,23 @@ public class NormalBabies : MonoBehaviour
 
     void Movement()
     {
-      /*  var distance =0f;
-        for (int i =0;i< _player.GetComponent<PlayerController>().currentBaby;i++)
-        {
-            distance += babyDistance;
-        }*/
-
-        var pos = _player.transform.position.y - babyDistance;
+     
         if (hasCollided)
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.down*speed*Time.deltaTime);
+                if (isRight)
+                {
+                    transform.Translate(Vector3.right*horizontalSpeed*Time.deltaTime);
+                }
+                else
+                {
+                    transform.Translate(-Vector3.right*horizontalSpeed*Time.deltaTime);
+                }
+            
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position,_player.transform.position, turnSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, turnSpeed);
         }
     }
 
