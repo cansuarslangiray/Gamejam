@@ -62,12 +62,12 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
-            FindObjectOfType<GameManager>().GameOver();
+            FindObjectOfType<FlappyBirdManager>().GameOver();
         }
 
         else if(collision.gameObject.tag == "Scoring")
         {
-            FindObjectOfType<GameManager>().IncreaseScore();
+            FindObjectOfType<FlappyBirdManager>().IncreaseScore();
         }
     }
 }

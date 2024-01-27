@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class GameManager : MonoBehaviour
+public class FlappyBirdManager : MonoBehaviour
 {
     private int score=0;
     public Text scoreText;
-<<<<<<< Updated upstream
     public GameObject playButton;
     public GameObject gameOver;
-    public Player player;
-=======
-
-    public GameObject playButton;
-    public GameObject gameOver;
-
     public Player player;
     public GameObject playerG_ObjectVersion;
     public int babycount;
@@ -34,15 +27,12 @@ public class GameManager : MonoBehaviour
             _segments = new List<Transform>();
             _segments.Add(playerG_ObjectVersion.transform);
         }*/
->>>>>>> Stashed changes
 
     public void IncreaseScore()
     {
         score++;
         scoreText.text = score.ToString();
     }
-<<<<<<< Updated upstream
-=======
     public void DecreaseScore()
     {
         score--;
@@ -55,9 +45,7 @@ public class GameManager : MonoBehaviour
         houseBabyDropedText.text = houseBabyDroped.ToString();
         
     }
-
->>>>>>> Stashed changes
-
+    
     public void GameOver()
     {
         Debug.Log("Game Over");
@@ -70,28 +58,22 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         Pause();
-<<<<<<< Updated upstream
-=======
 
 
         /*tailBabyArray = new GameObject[babycount];
         InstanciatePlayerTailBaby();*/
->>>>>>> Stashed changes
     }
 
     public void Play()
     {
-<<<<<<< Updated upstream
         score = 0;
         scoreText.text = score.ToString();
 
-=======
         player.transform.position = new Vector3(0, 3);
         score = 0;
         houseBabyDroped = 0;
         scoreText.text = score.ToString();
         houseBabyDropedText.text = score.ToString();
->>>>>>> Stashed changes
         playButton.SetActive(false);
         gameOver.SetActive(false);
 
@@ -103,15 +85,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(pipes[i].gameObject);
         }
-<<<<<<< Updated upstream
-=======
 
         GameObject[] fallBabyPrefabs = GameObject.FindGameObjectsWithTag("FallBaby");
         for (int i = 0; i < pipes.Length; i++)
         {
             Destroy(fallBabyPrefabs[i].gameObject);
         }
->>>>>>> Stashed changes
     }
 
     public void Pause()
@@ -120,9 +99,7 @@ public class GameManager : MonoBehaviour
         player.enabled = false;
     }
 
-<<<<<<< Updated upstream
 
-=======
     /*public void InstanciatePlayerTailBaby()
     {
         for(int i = 0; i < babycount; i++)
@@ -165,5 +142,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }*/
->>>>>>> Stashed changes
 }

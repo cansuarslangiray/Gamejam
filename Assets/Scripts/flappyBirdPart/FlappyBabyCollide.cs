@@ -11,7 +11,7 @@ public class FlappyBabyCollide : MonoBehaviour
         if (collision.tag == "Player")
         {
             TempGameObject = GameObject.FindWithTag("GameManager");
-            TempGameObject.GetComponent<GameManager>().IncreaseScore();
+            TempGameObject.GetComponent<FlappyBirdManager>().IncreaseScore();
             Destroy(this.gameObject);
         }
     }

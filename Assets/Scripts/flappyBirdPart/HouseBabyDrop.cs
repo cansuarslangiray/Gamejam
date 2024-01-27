@@ -13,7 +13,7 @@ public class HouseBabyDrop : MonoBehaviour
         if (collision.tag == "Player")
         {
             TempGameObject = GameObject.FindWithTag("GameManager");
-            TempGameObject.GetComponent<GameManager>().DecreaseScore();
+            TempGameObject.GetComponent<FlappyBirdManager>().DecreaseScore();
             InstBaby = Instantiate(Baby, GameObject.FindWithTag("Player").transform.position, Quaternion.identity);
             Rigidbody2D rb = InstBaby.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.down,ForceMode2D.Impulse);

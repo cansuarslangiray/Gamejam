@@ -10,7 +10,7 @@ public class HouseFallBabyCollide : MonoBehaviour
         if (collision.tag == "FallBaby")
         {
             TempGameObject = GameObject.FindWithTag("GameManager");
-            TempGameObject.GetComponent<GameManager>().IncreaseHouseBabyDroped();
+            TempGameObject.GetComponent<FlappyBirdManager>().IncreaseHouseBabyDroped();
             Destroy(gameObject.transform.parent.gameObject);
             Destroy(collision.gameObject);
         }
