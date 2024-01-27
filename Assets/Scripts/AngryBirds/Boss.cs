@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace AngryBirds
 {
@@ -13,6 +16,14 @@ namespace AngryBirds
         [SerializeField] private float moveSpeed;
         [SerializeField] private GameObject projectilePrefab;
         [SerializeField] private GameManager gameManager;
+        [SerializeField] private Slider bossHealth;
+        [SerializeField] private int maxHealth;
+        [SerializeField] private int currentHealth;
+
+        private void Start()
+        {
+            currentHealth = maxHealth;
+        }
 
         public IEnumerator MakeMove()
         {
@@ -20,7 +31,8 @@ namespace AngryBirds
             GameManager.PlayerTurn = false;
             Shoot();
             yield return new WaitForSeconds(5);
-            yield return Relocate();
+            gameManager.SetCamera(FocusedCamera.Player);
+            //yield return Relocate();
         }
 
         private IEnumerator Relocate()
@@ -45,6 +57,16 @@ namespace AngryBirds
             StartCoroutine(ShootRoutine(selectedTargets));
         }
 
+        private void Update()
+        {
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            bossHealth.value = ((float)currentHealth / maxHealth);
+        }
+
         private IEnumerator ShootRoutine(int[] targets)
         {
             for (int i = 0; i < targets.Length; i++)
@@ -59,6 +81,11 @@ namespace AngryBirds
                 }
                 yield return new WaitForSeconds(0.5f);
             }            
+        }
+
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
         }
     }
 }

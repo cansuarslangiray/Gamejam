@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AngryBirds
 {
@@ -86,6 +87,10 @@ namespace AngryBirds
         private void OnCollisionEnter2D(Collision2D other)
         {
             gameManager.SetCamera(FocusedCamera.Area);
+            if (other.transform.CompareTag("Boss"))
+            {
+                other.transform.GetComponent<Boss>().TakeDamage(Random.Range(10, 16));
+            }
             GameManager.BossTurn.Invoke();
             rb.gravityScale = 0;
             gameObject.SetActive(false);

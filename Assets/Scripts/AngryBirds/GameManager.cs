@@ -1,6 +1,7 @@
 using System;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace AngryBirds
 {
@@ -55,6 +56,11 @@ namespace AngryBirds
                     playerCamera.gameObject.SetActive(false);
                     break;
             }
+        }
+        
+        public void Retry()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

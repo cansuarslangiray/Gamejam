@@ -14,6 +14,7 @@ TagManager:
   - Enemy
   - Baby
   - Bullet
+  - Boss
   layers:
   - Default
   - TransparentFX

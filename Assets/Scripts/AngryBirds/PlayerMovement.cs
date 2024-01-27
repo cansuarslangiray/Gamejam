@@ -1,6 +1,7 @@
 using System;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AngryBirds
 {
@@ -8,20 +9,28 @@ namespace AngryBirds
     {
         [SerializeField] private float xPosition;
         [SerializeField] private float horizontalSpeed;
-        [SerializeField] private bool hasBaby;
         [SerializeField] private BabyHead currentBaby;
         [SerializeField] private Vector3 movementVector;
         [SerializeField] private CinemachineVirtualCamera babyCamera;
-        [SerializeField] private int health;
+        [SerializeField] private int maxHealth;
+        [SerializeField] private int currentHealth;
+        [SerializeField] private Slider playerHealth;
         
         private void Start()
         {
+            currentHealth = maxHealth;
             ReloadBaby();
         }
 
         private void Update()
         {
             Movement();
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            playerHealth.value = (float)currentHealth / maxHealth;
         }
 
         private void Movement()
@@ -54,14 +63,13 @@ namespace AngryBirds
                 baby.SetActive(true);
             }
             currentBaby = baby.GetComponent<BabyHead>();
-            hasBaby = true;
             babyCamera.Follow = baby.transform;
             babyCamera.LookAt = baby.transform;
         }
 
         public void TakeDamage(int damage)
         {
-            health -= damage;
+            currentHealth -= damage;
         }
     }
 }
