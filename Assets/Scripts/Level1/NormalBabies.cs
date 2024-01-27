@@ -7,15 +7,16 @@ public class NormalBabies : MonoBehaviour
 {
     public int health = 1;
     public float speed;
-    private GameObject _player;
+    private GameObject _babyIcon;
     public CapsuleCollider2D cd;
     public float turnSpeed;
     public bool hasCollided = true;
-    public float babyDistance = 0.1f;
+    private GameObject babyBar;
 
     private void Start()
     {
-        _player = GameObject.Find("Player");
+        _babyIcon = GameObject.Find("BabyIcon");
+        babyBar = GameObject.Find("GameManager");
         cd = GetComponent<CapsuleCollider2D>();
     }
     
@@ -23,8 +24,9 @@ public class NormalBabies : MonoBehaviour
     {
         if (col.transform.CompareTag("Player"))
         {
-            _player.GetComponent<PlayerController>().currentBaby++;
             col.transform.GetComponent<PlayerController>().IncreasingHealth(health);
+            babyBar.transform.GetComponent<BabyBar>().IncreasingBabySlider(health);
+
             cd.enabled = false;
             hasCollided = false;
         }
@@ -32,20 +34,14 @@ public class NormalBabies : MonoBehaviour
 
     void Movement()
     {
-      /*  var distance =0f;
-        for (int i =0;i< _player.GetComponent<PlayerController>().currentBaby;i++)
-        {
-            distance += babyDistance;
-        }*/
 
-        var pos = _player.transform.position.y - babyDistance;
         if (hasCollided)
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position,_player.transform.position, turnSpeed);
+            transform.position = Vector3.MoveTowards(transform.position,_babyIcon.transform.position, turnSpeed);
         }
     }
 

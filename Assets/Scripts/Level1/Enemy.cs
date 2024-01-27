@@ -8,10 +8,14 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     public float speed;
     private GameObject _player;
+    private GameObject babyBar;
+
 
     private void Start()
     {
         _player = GameObject.Find("Player");
+        babyBar = GameObject.Find("GameManager");
+
     }
     
     private void OnTriggerEnter2D(Collider2D col)
@@ -19,6 +23,8 @@ public class Enemy : MonoBehaviour
         if (col.transform.CompareTag("Player"))
         {
             col.transform.GetComponent<PlayerController>().TakeDamage(damage);
+            babyBar.transform.GetComponent<BabyBar>().DecreasingBabySlider(damage);
+
         }
     }
 

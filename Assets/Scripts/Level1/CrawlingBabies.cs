@@ -8,14 +8,16 @@ public class CrawlingBabies : MonoBehaviour
     public bool isRight;
     public int health = 2;
     public float speed;
-    private GameObject _player;
+    private GameObject _babyIcon;
     public CapsuleCollider2D cd;
     public float turnSpeed;
     public bool hasCollided = true;
+    private GameObject babyBar;
 
     private void Start()
     {
-        _player = GameObject.Find("Player");
+        _babyIcon = GameObject.Find("BabyIcon");
+        babyBar = GameObject.Find("GameManager");
         cd = GetComponent<CapsuleCollider2D>();
 
     }
@@ -24,8 +26,8 @@ public class CrawlingBabies : MonoBehaviour
     {
         if (col.transform.CompareTag("Player"))
         {
-            _player.GetComponent<PlayerController>().currentBaby++;
             col.transform.GetComponent<PlayerController>().IncreasingHealth(health);
+            babyBar.transform.GetComponent<BabyBar>().IncreasingBabySlider(health);
             cd.enabled = false;
             hasCollided = false;
         }
@@ -49,7 +51,7 @@ public class CrawlingBabies : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, turnSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, _babyIcon.transform.position, turnSpeed);
         }
     }
 

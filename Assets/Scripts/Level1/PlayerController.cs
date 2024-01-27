@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public int health =1;
     public int currentScene = 1;
     public GameObject deadUi;
-    public int currentBaby = 0;
 
     
     void PlayerMovement()
@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
             if (transform.position.x > -4)
             {
                 targertPos -=4;
+                transform.DORotate(new Vector3(0, 0, 45), 0.3f).OnComplete(() =>
+                {
+                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
+                });
             }
         }
         else if (Input.GetKeyDown(KeyCode.D))
@@ -28,6 +32,10 @@ public class PlayerController : MonoBehaviour
             if (transform.position.x < 4)
             {
                 targertPos +=4;
+                transform.DORotate(new Vector3(0, 0, -45), 0.3f).OnComplete(() =>
+                {
+                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
+                });
             }
         }
 
@@ -69,4 +77,5 @@ public class PlayerController : MonoBehaviour
     {
         health += healthPoint;
     }
+    
 }
