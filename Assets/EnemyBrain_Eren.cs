@@ -13,6 +13,7 @@ public class EnemyBrain_Eren : MonoBehaviour
     public RaycastHit2D hit;
     public GameObject unlem;
     public float time;
+    public Animator animator;
 
     private void Awake()
     {
@@ -20,6 +21,11 @@ public class EnemyBrain_Eren : MonoBehaviour
         if (player != null)
         {
             destination = player.transform.position - transform.position;
+        }
+
+        if (destination.x < 0)
+        {
+            transform.rotation = new Quaternion(0, 180, 0, 0);
         }
 
         hit = Physics2D.Raycast(transform.position, destination, 10, layerMask);
@@ -47,14 +53,15 @@ public class EnemyBrain_Eren : MonoBehaviour
         if (collision.gameObject.tag=="Player") 
         {
             Debug.Log("Bebeði çaldým");
+            animator.SetTrigger("Steal");
             Movement movement = collision.gameObject.GetComponent<Movement>();
             movement.setHealth(-1);
         }
         if (collision.gameObject.tag == "Bullet")
         {
+            //Bullet gelince bebeðin pivot noktasýndan bebek instanciate etmeliyiz 
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-
         }
     }
 

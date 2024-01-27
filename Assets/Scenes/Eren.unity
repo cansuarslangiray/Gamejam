@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6367834157999150820, guid: 324ba091f2ce752489e44315509362a9, type: 3}
-  enemy2: {fileID: 388313312807992545, guid: 5e07244d62df5a04bb75b7c00a045718, type: 3}
+  enemy2: {fileID: 7482280799709561657, guid: 5e07244d62df5a04bb75b7c00a045718, type: 3}
   time: 0
 --- !u!4 &173961954
 Transform:
@@ -559,6 +559,8 @@ MonoBehaviour:
   bullet: {fileID: 3999458290642662384, guid: c346a2001ada56842a05aba08f4559a7, type: 3}
   bulletSpeed: 1500
   rb: {fileID: 1427624166}
+  maxHealth: 50
+  maxAmmo: 5
 --- !u!212 &1427624164
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -665,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0d3c29cc2390848969bd476c3013ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BabyNum: 0
+  movement: {fileID: 1427624163}
 --- !u!61 &1427624168
 BoxCollider2D:
   m_ObjectHideFlags: 0
