@@ -11,9 +11,11 @@ public class BoringEnemy_Eren : MonoBehaviour
     public float y;
     public GameObject unlem;
     private float time;
+    public LayerMask layerMask;
 
     private void Awake()
     {
+        
         y = Random.Range(-4,2);
         if (transform.position.x<0)
         {
@@ -24,29 +26,14 @@ public class BoringEnemy_Eren : MonoBehaviour
             destination =  new Vector3(-9, y, 0)- transform.position;
         }
 
-        Debug.Log(destination);
-
-        hit = Physics2D.Raycast(transform.position, destination,10);
+        hit = Physics2D.Raycast(transform.position, destination,10,layerMask);
+        
         Debug.DrawLine(transform.position, destination);
         if (hit)
         {
-            Debug.Log(hit.point);
-            if (hit.point.x == -9)
-            {
-                GameObject unlemTemp = Instantiate(unlem,new Vector2(hit.point.x+0.5f,hit.point.y) , transform.rotation);
-            }
-            else if(hit.point.x == 9)
-            {
-                GameObject unlemTemp = Instantiate(unlem, new Vector2(hit.point.x - 0.5f, hit.point.y), transform.rotation);
-            }
-            else if (hit.point.y == 5)
-            {
-                GameObject unlemTemp = Instantiate(unlem, new Vector2(hit.point.x, hit.point.y-0.5f), transform.rotation);
-            }
-            else if (hit.point.x == 9)
-            {
-                GameObject unlemTemp = Instantiate(unlem, new Vector2(hit.point.x, hit.point.y + 0.5f), transform.rotation);
-            }
+            
+           GameObject unlemTemp = Instantiate(unlem,new Vector2(hit.point.x,hit.point.y) , transform.rotation);
+            
 
         }
     }
@@ -55,7 +42,7 @@ public class BoringEnemy_Eren : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time > 3)
+        if (time > 2)
         {
             destination = destination.normalized;
             rb.velocity = destination * Speed;

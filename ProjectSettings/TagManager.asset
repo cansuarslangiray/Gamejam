@@ -8,6 +8,8 @@ TagManager:
   - Baby
   - Bullet
   - Enemy
+  - Scoring
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ray
   - 
   - 
   - 
