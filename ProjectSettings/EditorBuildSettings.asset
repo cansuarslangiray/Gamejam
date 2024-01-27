@@ -6,7 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< Updated upstream
     path: "Assets/Scenes/Ku\u015FSahne1.unity"
+=======
+    path: Assets/Scenes/KusSahne1.unity
+>>>>>>> Stashed changes
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Level1.unity
