@@ -13,9 +13,28 @@ public class BoringEnemy_Eren : MonoBehaviour
     private float time;
     public LayerMask layerMask;
     public Animator animator;
+    private bool haveBaby;
+    public GameObject baby;
+    public Transform babyPoint;
 
     private void Awake()
     {
+        float rand = Random.Range(0f, 1f);
+
+        if (rand<0.4)
+        {
+            haveBaby = true;
+        }
+        else
+        {
+            haveBaby = false;
+        }
+
+
+        if (haveBaby)
+        {
+            animator.SetTrigger("Steal");
+        }
         
         y = Random.Range(-4,2);
         if (transform.position.x<0)
@@ -62,12 +81,19 @@ public class BoringEnemy_Eren : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Bebeði çaldým");
-            animator.SetTrigger("Steal");
+            if (!haveBaby)
+            {
+                animator.SetTrigger("Steal");
+            }
             Movement movement = collision.gameObject.GetComponent<Movement>();
             movement.setHealth(-1);
         }
         if (collision.gameObject.tag == "Bullet")
         {
+            GameObject tempBaby = Instantiate(baby,babyPoint.position,babyPoint.rotation);
+            Rigidbody2D rb = tempBaby.GetComponent<Rigidbody2D>();
+            rb.gravityScale = 0.1f;
+            rb.drag = 0;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
 

@@ -411,6 +411,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   animator: {fileID: -4691571626078200893}
+  baby: {fileID: 6274038152829733389, guid: b249e53dbe65ada42824373105995cf0, type: 3}
+  babyPoint: {fileID: 6743717005161068823}
 --- !u!95 &-4691571626078200893
 Animator:
   serializedVersion: 5
