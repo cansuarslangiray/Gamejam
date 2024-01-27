@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< Updated upstream
 using DG.Tweening;
+=======
+>>>>>>> Stashed changes
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float turnSpeed;
+<<<<<<< Updated upstream
     private float targertPos = 0;
     public int health = 1;
     public int currentScene = 1;
@@ -47,6 +51,33 @@ public class PlayerController : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position,
             new Vector3(targertPos, transform.position.y, 0), turnSpeed);
+=======
+    private float targertPos=0;
+    public int health =1;
+    public int currentScene = 1;
+    public GameObject deadUi;
+    public int currentBaby = 0;
+
+    
+    void PlayerMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (transform.position.x > -4)
+            {
+                targertPos -=4;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (transform.position.x < 4)
+            {
+                targertPos +=4;
+            }
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position,new Vector3(targertPos,transform.position.y,0),turnSpeed);
+>>>>>>> Stashed changes
     }
 
     private void Update()
@@ -56,14 +87,20 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+<<<<<<< Updated upstream
         health -= damage;
 
+=======
+         health -= damage;
+        
+>>>>>>> Stashed changes
         if (health <= 0)
         {
             PauseGame();
             deadUi.SetActive(true);
         }
     }
+<<<<<<< Updated upstream
 
     void PauseGame()
     {
@@ -71,6 +108,13 @@ public class PlayerController : MonoBehaviour
     }
 
     void ResumeGame()
+=======
+    void PauseGame ()
+    {
+        Time.timeScale = 0;
+    }
+    void ResumeGame ()
+>>>>>>> Stashed changes
     {
         Time.timeScale = 1;
     }
@@ -86,4 +130,8 @@ public class PlayerController : MonoBehaviour
     {
         health += healthPoint;
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
