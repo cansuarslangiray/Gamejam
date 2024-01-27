@@ -17,44 +17,36 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMovement()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (transform.position.x == targertPos)
         {
-            if (transform.position.x > -4)
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                _canMove = true;
-                targertPos -= 4;
-                transform.DORotate(new Vector3(0, 0, 45), 0.3f).OnComplete(() =>
+                if (transform.position.x > -4)
                 {
-                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
-                });
+                    targertPos -= 4;
+                    transform.DORotate(new Vector3(0, 0, 45), 0.3f).OnComplete(() =>
+                    {
+                        transform.DORotate(new Vector3(0, 0, 0), 0.3f);
+                    });
+                }
             }
-            else
+            else if (Input.GetKeyDown(KeyCode.D))
             {
-                _canMove = false;
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            if (transform.position.x < 4)
-            {
-                _canMove = true;
-                targertPos += 4;
-                transform.DORotate(new Vector3(0, 0, -45), 0.3f).OnComplete(() =>
+                if (transform.position.x < 4)
                 {
-                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
-                });
-            }
-            else
-            {
-                _canMove = false;
+                    _canMove = true;
+                    targertPos += 4;
+                    transform.DORotate(new Vector3(0, 0, -45), 0.3f).OnComplete(() =>
+                    {
+                        transform.DORotate(new Vector3(0, 0, 0), 0.3f);
+                    });
+                }
             }
         }
 
-        if (_canMove)
-        {
-            transform.position = Vector3.MoveTowards(transform.position,
-                new Vector3(targertPos, transform.position.y, 0), turnSpeed);
-        }
+
+        transform.position = Vector3.MoveTowards(transform.position,
+            new Vector3(targertPos, transform.position.y, 0), turnSpeed);
     }
 
     private void Update()
