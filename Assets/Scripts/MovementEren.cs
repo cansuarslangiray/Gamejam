@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private float time;
     private int ammo;
     public int maxAmmo;
+    public Transform crossHair;
 
     
 
@@ -35,12 +36,18 @@ public class Movement : MonoBehaviour
 
         rb.velocity = new Vector2 (x, y)*speed;
 
+        /*var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+
+        var halfPos = transform.position+(mouseWorldPos- transform.position)/2;
+        crossHair.position = halfPos;*/
+
         if (Input.GetKeyDown(KeyCode.Space) && ammo>0)
         {
-            GameObject bulletTemp = Instantiate(bullet, transform.position, transform.rotation);
+            GameObject bulletTemp = Instantiate(bullet, transform.position, new Quaternion(0,0,-90,0));
             Rigidbody2D rb = bulletTemp.GetComponent<Rigidbody2D>();
-            Vector2 dir = new Vector3(0, 0) - transform.position;
-            rb.AddForce(Vector2.down * bulletSpeed, ForceMode2D.Force);
+            //Vector2 dir = new Vector2(0,-1) - transform.position;
+            rb.AddForce(new Vector2(0,-1) * bulletSpeed, ForceMode2D.Force);
             ammo--;
         }
 
