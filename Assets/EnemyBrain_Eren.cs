@@ -47,6 +47,8 @@ public class EnemyBrain_Eren : MonoBehaviour
         if (collision.gameObject.tag=="Player") 
         {
             Debug.Log("Bebeði çaldým");
+            Movement movement = collision.gameObject.GetComponent<Movement>();
+            movement.setHealth(-1);
         }
         if (collision.gameObject.tag == "Bullet")
         {

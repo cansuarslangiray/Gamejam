@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Inventory_Eren : MonoBehaviour
 {
-    public int BabyNum;
+    
+    public Movement movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,8 @@ public class Inventory_Eren : MonoBehaviour
     {
         if (collision.gameObject.tag == "Baby")
         {
-            Debug.Log("Hellooo");
-            BabyNum++;
+            
+            movement.setHealth(1);
             Destroy(collision.gameObject);
         }
     }
