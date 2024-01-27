@@ -15,7 +15,6 @@ public class MenuManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("LevelCount", SceneManager.GetActiveScene().buildIndex + 1); 
         levelsToggleButton.SetActive(true);
     }

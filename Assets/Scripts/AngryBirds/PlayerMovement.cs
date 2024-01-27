@@ -58,7 +58,7 @@ namespace AngryBirds
             var baby = ObjectPool.SharedInstance.GetPooledObject();
             if (baby != null)
             {
-                baby.transform.position = transform.position + Vector3.one;
+                baby.transform.position = transform.position + Vector3.one * 5;
                 baby.transform.SetParent(this.transform);
                 baby.SetActive(true);
             }

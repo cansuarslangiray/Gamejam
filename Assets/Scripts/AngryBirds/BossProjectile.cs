@@ -22,6 +22,7 @@ namespace AngryBirds
 
         public void MoveToTarget()
         {
+            transform.DOLocalRotate(new Vector3(0, 0, 25), (0.5f * (transform.position.x - targetPosition.x) / 20));
             transform.DOMoveY(targetPosition.y - 1, (0.5f * (transform.position.x - targetPosition.x) / 20)).SetEase
                 (Ease
                     .InSine)

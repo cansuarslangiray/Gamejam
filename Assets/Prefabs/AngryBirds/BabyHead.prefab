@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6868751375033205802}
   - component: {fileID: 2493804468982076826}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Circle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1470233719720526415}
   - component: {fileID: 91890097606040533}
   - component: {fileID: 4352879941490972870}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: BabyHead
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -191,11 +191,12 @@ MonoBehaviour:
   directionVisualizer: {fileID: 5995157117087390855}
   babyLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   currentMousePosition: {x: 0, y: 0, z: 0}
   currentDragDirection: {x: 0, y: 0, z: 0}
   gameManager: {fileID: 0}
   circleCollider: {fileID: 4352879941490972870}
+  container: {fileID: 0}
 --- !u!50 &91890097606040533
 Rigidbody2D:
   serializedVersion: 4
@@ -268,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2802612122153546962}
   - component: {fileID: 5995157117087390855}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: DirectionVisualizers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8430590898609240601}
   - component: {fileID: 129658388548025718}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Circle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6186444395498094401}
   - component: {fileID: 2110263750938883989}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2967545004517275123}
   - component: {fileID: 4081925699696035402}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4654681344383034204}
   - component: {fileID: 625802976724561633}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Circle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

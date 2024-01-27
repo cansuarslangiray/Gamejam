@@ -19,6 +19,10 @@ namespace AngryBirds
         [SerializeField] private Slider bossHealth;
         [SerializeField] private int maxHealth;
         [SerializeField] private int currentHealth;
+        [SerializeField] private Vector3[] projectileSpawnLocations;
+        [SerializeField] private int[] targets;
+        [SerializeField] private Animator bossAnimator;
+        private static readonly int Attack = Animator.StringToHash("Attack");
 
         private void Start()
         {
@@ -29,7 +33,8 @@ namespace AngryBirds
         {
             yield return new WaitForSeconds(5);
             GameManager.PlayerTurn = false;
-            Shoot();
+            //Shoot();
+            bossAnimator.SetTrigger(Attack);
             yield return new WaitForSeconds(5);
             gameManager.SetCamera(FocusedCamera.Player);
             //yield return Relocate();
@@ -47,7 +52,7 @@ namespace AngryBirds
             yield return null;
         }
 
-        private void Shoot()
+        /*private void Shoot()
         {
             var selectedTargets = new int[]
             {
@@ -55,7 +60,7 @@ namespace AngryBirds
                     .Range(0, shootTargets.Length)]
             };
             StartCoroutine(ShootRoutine(selectedTargets));
-        }
+        }*/
 
         private void Update()
         {
@@ -67,11 +72,11 @@ namespace AngryBirds
             bossHealth.value = ((float)currentHealth / maxHealth);
         }
 
-        private IEnumerator ShootRoutine(int[] targets)
+        /*private IEnumerator ShootRoutine(int[] targets)
         {
             for (int i = 0; i < targets.Length; i++)
             {
-                var bossProjectileObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                var bossProjectileObject = Instantiate(projectilePrefab, projectileSpawnLocations[i], Quaternion.identity);
                 var bossProjectile = bossProjectileObject.GetComponent<BossProjectile>();
                 bossProjectile.targetPosition = new Vector2(targets[i], 0);
                 bossProjectile.MoveToTarget();
@@ -81,8 +86,30 @@ namespace AngryBirds
                 }
                 yield return new WaitForSeconds(0.5f);
             }            
-        }
+        }*/
 
+        public void ShootFirstProjectile()
+        {
+            targets = new int[]
+            {
+                shootTargets[Random.Range(0, shootTargets.Length)], shootTargets[Random
+                    .Range(0, shootTargets.Length)]
+            };
+            var bossProjectileObject = Instantiate(projectilePrefab, projectileSpawnLocations[0], Quaternion.identity);
+            var bossProjectile = bossProjectileObject.GetComponent<BossProjectile>();
+            bossProjectile.targetPosition = new Vector2(targets[0], 0);
+            bossProjectile.MoveToTarget();
+        }
+        
+        public void ShootSecondProjectile()
+        {
+            var bossProjectileObject = Instantiate(projectilePrefab, projectileSpawnLocations[1], Quaternion.identity);
+            var bossProjectile = bossProjectileObject.GetComponent<BossProjectile>();
+            bossProjectile.targetPosition = new Vector2(targets[1], 0);
+            bossProjectile.MoveToTarget();
+            bossProjectile.isLast = true;
+        }
+        
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
