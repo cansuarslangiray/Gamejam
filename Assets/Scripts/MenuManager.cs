@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class MenuManager : MonoBehaviour
 {
@@ -15,8 +16,7 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
-        Invoke("StartNextLevel", 1f);
-        darkPanel.GetComponent<Animation>().Play("DarkIn");
+        darkPanel.GetComponent<Image>().DOFade(1, 1).OnComplete(()=> { StartNextLevel(); });
     }
 
     public void StartNextLevel()
@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("LevelCount", SceneManager.GetActiveScene().buildIndex + 1);
         levelsToggleButton.SetActive(true);
 
-        darkPanel.GetComponent<Animation>().Play("DarkOut");
+        darkPanel.GetComponent<Image>().DOFade(0, 1);
     }
 
     public void SelectLevels()
