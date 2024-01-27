@@ -18,6 +18,7 @@ public class NormalBabies : MonoBehaviour
         _babyIcon = GameObject.Find("BabyIcon");
         babyBar = GameObject.Find("GameManager");
         cd = GetComponent<CapsuleCollider2D>();
+        speed = FindObjectOfType<GenerateLevel>().speed;
     }
     
     private void OnTriggerEnter2D(Collider2D col)

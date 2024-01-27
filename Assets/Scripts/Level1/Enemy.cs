@@ -16,8 +16,9 @@ public class Enemy : MonoBehaviour
         _player = GameObject.Find("Player");
         babyBar = GameObject.Find("GameManager");
 
+        speed = FindObjectOfType<GenerateLevel>().speed;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.transform.CompareTag("Player"))

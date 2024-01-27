@@ -17,7 +17,7 @@ public class RollingEnemy : MonoBehaviour
     {
         _player = GameObject.Find("Player");
         babyBar = GameObject.Find("GameManager");
-
+        speed = FindObjectOfType<GenerateLevel>().speed;
     }
 
   

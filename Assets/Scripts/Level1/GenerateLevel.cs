@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GenerateLevel : MonoBehaviour
 {
+
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {

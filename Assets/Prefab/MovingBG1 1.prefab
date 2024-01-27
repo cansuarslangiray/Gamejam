@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499875749444583735}
   - component: {fileID: 7615152720373572479}
-  - component: {fileID: 1496521267783065257}
+  - component: {fileID: 25197215458397081}
   m_Layer: 0
   m_Name: MovingBG1 1
   m_TagString: Untagged
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1496521267783065257
+--- !u!114 &25197215458397081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,11 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8707337611427099476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6e652e5b192c747bb6d49a85c285b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 18af4aeefebc64f44aa12afbdd0112bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   otherOrser: {fileID: 0}
-  speed: 1
 --- !u!1 &8790595140570650117
 GameObject:
   m_ObjectHideFlags: 0

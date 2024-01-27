@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject levelButtons;
     [SerializeField] private GameObject levelsToggleButton;
+    [SerializeField] private GameObject darkPanel;
 
     private void Start()
     {
@@ -14,9 +15,17 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
+        Invoke("StartNextLevel", 1f);
+        darkPanel.GetComponent<Animation>().Play("DarkIn");
+    }
+
+    public void StartNextLevel()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        PlayerPrefs.SetInt("LevelCount", SceneManager.GetActiveScene().buildIndex + 1); 
+        PlayerPrefs.SetInt("LevelCount", SceneManager.GetActiveScene().buildIndex + 1);
         levelsToggleButton.SetActive(true);
+
+        darkPanel.GetComponent<Animation>().Play("DarkOut");
     }
 
     public void SelectLevels()

@@ -1,9 +1,12 @@
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController1 : MonoBehaviour
 {
     public float turnSpeed;
     private float targertPos = 0;
@@ -11,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public int currentScene = 1;
     public GameObject deadUi;
     private bool _canMove;
-    public int healthPoint;
 
 
     void PlayerMovement()
@@ -23,9 +25,9 @@ public class PlayerController : MonoBehaviour
                 if (transform.position.x > -4)
                 {
                     targertPos -= 4;
-                    transform.DORotate(new Vector3(0, 0, 25), 0.18f).OnComplete(() =>
+                    transform.DORotate(new Vector3(0, 0, 45), 0.3f).OnComplete(() =>
                     {
-                        transform.DORotate(new Vector3(0, 0, 0), 0.18f);
+                        transform.DORotate(new Vector3(0, 0, 0), 0.3f);
                     });
                 }
             }
@@ -35,9 +37,9 @@ public class PlayerController : MonoBehaviour
                 {
                     _canMove = true;
                     targertPos += 4;
-                    transform.DORotate(new Vector3(0, 0, -25), 0.18f).OnComplete(() =>
+                    transform.DORotate(new Vector3(0, 0, -45), 0.3f).OnComplete(() =>
                     {
-                        transform.DORotate(new Vector3(0, 0, 0), 0.18f);
+                        transform.DORotate(new Vector3(0, 0, 0), 0.3f);
                     });
                 }
             }
@@ -46,7 +48,6 @@ public class PlayerController : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position,
             new Vector3(targertPos, transform.position.y, 0), turnSpeed);
-
     }
 
     private void Update()
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        
+
         if (health <= 0)
         {
             PauseGame();
@@ -69,10 +70,10 @@ public class PlayerController : MonoBehaviour
             {
                 int i = Random.Range(0, 2);
                 i--;
-                targertPos += 4 * i;
-                transform.DORotate(new Vector3(0, 0, -25 * i), 0.18f).OnComplete(() =>
+                targertPos += 4*i;
+                transform.DORotate(new Vector3(0, 0, -45*i), 0.3f).OnComplete(() =>
                 {
-                    transform.DORotate(new Vector3(0, 0, 0), 0.18f);
+                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
                 });
                 return;
             }
@@ -80,9 +81,9 @@ public class PlayerController : MonoBehaviour
             if (transform.position.x > -4)
             {
                 targertPos -= 4;
-                transform.DORotate(new Vector3(0, 0, 25), 0.18f).OnComplete(() =>
+                transform.DORotate(new Vector3(0, 0, 45), 0.3f).OnComplete(() =>
                 {
-                    transform.DORotate(new Vector3(0, 0, 0), 0.18f);
+                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
                 });
             }
 
@@ -103,9 +104,7 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0;
     }
 
- 
-  
-    void ResumeGame ()
+    void ResumeGame()
     {
         Time.timeScale = 1;
     }
@@ -122,4 +121,3 @@ public class PlayerController : MonoBehaviour
         health += healthPoint;
     }
 }
-

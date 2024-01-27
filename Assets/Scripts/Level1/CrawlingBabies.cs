@@ -7,7 +7,7 @@ public class CrawlingBabies : MonoBehaviour
     public float horizontalSpeed;
     public bool isRight;
     public int health = 2;
-    public float speed;
+    private float speed;
     private GameObject _babyIcon;
     public CapsuleCollider2D cd;
     public float turnSpeed;
@@ -19,7 +19,7 @@ public class CrawlingBabies : MonoBehaviour
         _babyIcon = GameObject.Find("BabyIcon");
         babyBar = GameObject.Find("GameManager");
         cd = GetComponent<CapsuleCollider2D>();
-
+        speed = FindObjectOfType<GenerateLevel>().speed;
     }
     
     private void OnTriggerEnter2D(Collider2D col)
