@@ -7,16 +7,39 @@ public class ColorChange : MonoBehaviour
     Color lerpedColor = Color.white;
     Renderer renderer;
     float time;
+    float time2;
+    [SerializeField] Color color1;
+    [SerializeField] Color color2;
+    [SerializeField] Color color3;
+    private int colorIndex;
 
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        time = Time.time / 30;
-        lerpedColor = Color.Lerp(new Color(0.01f, 0.4f, 0.6f, 1), Color.red, time);
-        renderer.material.color = lerpedColor;
+        print("TEST " + Time.time);
+        if (colorIndex < 1)
+        {
+            time = Time.time / 30;
+            lerpedColor = Color.Lerp(color1, color2, time);
+            renderer.material.color = lerpedColor;
+
+            if (lerpedColor == color2)
+                colorIndex++;
+            return;
+        }
+
+        if (colorIndex < 2)
+        {
+            time2 = (Time.time-30) / 60;
+            lerpedColor = Color.Lerp(color2, color3, time2);
+            renderer.material.color = lerpedColor;
+
+            if (lerpedColor == color3)
+                colorIndex++;
+        }
     }
 }
