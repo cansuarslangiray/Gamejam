@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Movement : MonoBehaviour
     private int ammo;
     public int maxAmmo;
     public Transform crossHair;
+    public TextMeshProUGUI tempText;
 
     
 
@@ -23,6 +26,7 @@ public class Movement : MonoBehaviour
     {
         health = maxHealth;
         ammo = maxAmmo;
+        tempText.text = maxAmmo.ToString();
         calculateInterval();
     }
 
@@ -74,7 +78,13 @@ public class Movement : MonoBehaviour
         {
             health = maxHealth;
         }
+        tempText.text = health.ToString();
         calculateInterval();
+    }
+
+    public int getAmmo()
+    {
+        return ammo;
     }
 
     public int getHealth()

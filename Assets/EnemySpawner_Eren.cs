@@ -6,7 +6,7 @@ public class EnemySpawner_Eren : MonoBehaviour
 {
     enum sides
     {
-        UP, DOWN, LEFT, RIGHT
+         DOWN, LEFT, RIGHT
     }
 
     public GameObject enemy;
@@ -18,7 +18,7 @@ public class EnemySpawner_Eren : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        side = sides.UP;
+        side = sides.DOWN;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class EnemySpawner_Eren : MonoBehaviour
 
         if (time > 5)
         {
-            int random = Random.Range(1, 5);
+            int random = Random.Range(1, 4);
 
             switch (random)
             {
@@ -41,10 +41,6 @@ public class EnemySpawner_Eren : MonoBehaviour
                     break;
 
                 case 3:
-                    side = sides.UP;
-                    break;
-
-                case 4:
                     side = sides.DOWN;
                     break;
             }
@@ -63,18 +59,14 @@ public class EnemySpawner_Eren : MonoBehaviour
         if (side == sides.LEFT)
         {
             Xpos = -11; 
-            Ypos = Random.Range(-5,6);
+            Ypos = Random.Range(-5,3);
         }
         else if (side == sides.RIGHT)
         {
             Xpos = 11;
-            Ypos = Random.Range(-5, 6);
+            Ypos = Random.Range(-5, 3);
         }
-        else if (side == sides.UP)
-        {
-            Xpos = Random.Range(-9, 10);
-            Ypos = 7;
-        }
+        
         else if (side == sides.DOWN)
         {
             Xpos = Random.Range(-9, 10);

@@ -90,10 +90,14 @@ public class BoringEnemy_Eren : MonoBehaviour
         }
         if (collision.gameObject.tag == "Bullet")
         {
-            GameObject tempBaby = Instantiate(baby,babyPoint.position,babyPoint.rotation);
-            Rigidbody2D rb = tempBaby.GetComponent<Rigidbody2D>();
-            rb.gravityScale = 0.1f;
-            rb.drag = 0;
+            if (haveBaby)
+            {
+                GameObject tempBaby = Instantiate(baby, babyPoint.position, babyPoint.rotation);
+                Rigidbody2D rb = tempBaby.GetComponent<Rigidbody2D>();
+                rb.gravityScale = 0.1f;
+                rb.drag = 0;
+            }
+            
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
 
