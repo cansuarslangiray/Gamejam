@@ -22,6 +22,11 @@ public class ColorChange : MonoBehaviour
 
     void Update()
     {
+        if (Time.time > 60)
+        {
+
+            FindObjectOfType<MenuManager>().NextLevel();
+        }
         print("TEST " + Time.time);
         if (colorIndex < 1)
         {
@@ -43,10 +48,7 @@ public class ColorChange : MonoBehaviour
             if (lerpedColor == color3)
                 colorIndex++;
         }
-
-        if (Time.time == 60)
-        {
-            FindObjectOfType<MenuManager>().NextLevel();
-        }
+        Debug.Log("Hereee");
+        
     }
 }
