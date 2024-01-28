@@ -24,26 +24,7 @@ namespace AngryBirds
         public static bool PlayerTurn;
         public static Action BossTurn;
         private static readonly int Explode = Animator.StringToHash("Explode");
-
-        private void Start()
-        {
-            StartCoroutine(VolcanoRoutine());
-        }
-
-        private IEnumerator VolcanoRoutine()
-        {
-            while (true)
-            {
-                yield return new WaitForSeconds(3);
-                var random = Random.Range(0, 3);
-                if (random == 2)
-                {
-                    volcanoAnimator.SetTrigger(Explode);
-                }
-            }
-            yield break;
-        }
-
+        
         private void OnEnable()
         {
             BossTurn += StartBossTurn;

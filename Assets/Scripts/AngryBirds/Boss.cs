@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -113,6 +114,10 @@ namespace AngryBirds
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }

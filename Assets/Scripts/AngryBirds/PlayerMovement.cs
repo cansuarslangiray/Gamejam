@@ -18,6 +18,7 @@ namespace AngryBirds
         [SerializeField] private Slider playerHealth;
         [SerializeField] private Sprite[] sprites;
         [SerializeField] private Animator playerAnimator;
+        [SerializeField] private GameObject deathPanel;
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
 
         private void Start()
@@ -82,6 +83,10 @@ namespace AngryBirds
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
         }
 
         public void Shoot()
