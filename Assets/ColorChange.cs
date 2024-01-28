@@ -16,7 +16,7 @@ public class ColorChange : MonoBehaviour
     void Update()
     {
         time = Time.time / 30;
-        lerpedColor = Color.Lerp(new Color(1, 1, 1, 1), Color.red, time);
+        lerpedColor = Color.Lerp(new Color(0.01f, 0.4f, 0.6f, 1), Color.red, time);
         renderer.material.color = lerpedColor;
     }
 }
