@@ -372,6 +372,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &129411251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8591325253167105681, guid: 9a9910de511ba1440ac54b18064fdd85, type: 3}
+  m_PrefabInstance: {fileID: 667262857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &173961952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1249,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7266131835831220938, guid: 9a9910de511ba1440ac54b18064fdd85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3326246017195302295, guid: 85a13c65741a7474d9dbd89b41193431, type: 3}
+    - target: {fileID: 7266131835831220938, guid: 9a9910de511ba1440ac54b18064fdd85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266131835831220938, guid: 9a9910de511ba1440ac54b18064fdd85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8591325253167105681, guid: 9a9910de511ba1440ac54b18064fdd85, type: 3}
       propertyPath: m_Name
       value: DeadIU
@@ -1715,6 +1732,7 @@ MonoBehaviour:
   crossHair: {fileID: 0}
   tempText: {fileID: 383283235}
   slider: {fileID: 656436023}
+  DeathGUI: {fileID: 129411251}
 --- !u!212 &1427624164
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     public TextMeshProUGUI tempText;
     public Slider slider;
     private float sliderTime;
+    public GameObject DeathGUI;
 
     
 
@@ -91,6 +92,11 @@ public class Movement : MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
+        }
+        else if(health == 0)
+        {
+            Time.timeScale = 0;
+            DeathGUI.SetActive(true);
         }
         tempText.text = health.ToString();
         calculateInterval();
