@@ -14,6 +14,8 @@ public class EnemyBrain_Eren : MonoBehaviour
     public GameObject unlem;
     public float time;
     public Animator animator;
+    public AudioSource storkSound;
+    public AudioSource deadSound;
 
     private void Awake()
     {
@@ -34,6 +36,8 @@ public class EnemyBrain_Eren : MonoBehaviour
         {
             GameObject unlemTemp = Instantiate(unlem, new Vector2(hit.point.x, hit.point.y), transform.rotation);
         }
+
+        storkSound.Play();
     }
 
     private void Update()
@@ -60,6 +64,7 @@ public class EnemyBrain_Eren : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             //Bullet gelince bebeðin pivot noktasýndan bebek instanciate etmeliyiz 
+            deadSound.Play();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }

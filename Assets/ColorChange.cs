@@ -12,10 +12,12 @@ public class ColorChange : MonoBehaviour
     [SerializeField] Color color2;
     [SerializeField] Color color3;
     private int colorIndex;
+    private MenuManager menuManager;
 
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
+        menuManager = GameObject.FindAnyObjectByType<MenuManager>();
     }
 
     void Update()
@@ -40,6 +42,11 @@ public class ColorChange : MonoBehaviour
 
             if (lerpedColor == color3)
                 colorIndex++;
+        }
+
+        if (Time.time == 60)
+        {
+            
         }
     }
 }

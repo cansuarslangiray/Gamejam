@@ -16,6 +16,8 @@ public class BoringEnemy_Eren : MonoBehaviour
     private bool haveBaby;
     public GameObject baby;
     public Transform babyPoint;
+    public AudioSource storkSound;
+    public AudioSource deadSound;
 
     private void Awake()
     {
@@ -61,6 +63,8 @@ public class BoringEnemy_Eren : MonoBehaviour
             
 
         }
+
+        storkSound.Play();
     }
 
     private void Update()
@@ -97,7 +101,7 @@ public class BoringEnemy_Eren : MonoBehaviour
                 rb.gravityScale = 0.1f;
                 rb.drag = 0;
             }
-            
+            deadSound.Play();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
 
