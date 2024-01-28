@@ -46,7 +46,7 @@ public class ColorChange : MonoBehaviour
 
         if (Time.time == 60)
         {
-            
+            FindObjectOfType<MenuManager>().NextLevel();
         }
     }
 }
