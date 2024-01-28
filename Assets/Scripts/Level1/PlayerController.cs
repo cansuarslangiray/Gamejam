@@ -90,9 +90,9 @@ public class PlayerController : MonoBehaviour
             {
                 _canMove = true;
                 targertPos += 4;
-                transform.DORotate(new Vector3(0, 0, -45), 0.3f).OnComplete(() =>
+                transform.DORotate(new Vector3(0, 0, -25), 0.18f).OnComplete(() =>
                 {
-                    transform.DORotate(new Vector3(0, 0, 0), 0.3f);
+                    transform.DORotate(new Vector3(0, 0, 0), 0.18f);
                 });
             }
         }

@@ -12,6 +12,7 @@ public class NormalBabies : MonoBehaviour
     public float turnSpeed;
     public bool hasCollided = true;
     private GameObject babyBar;
+    [SerializeField] bool isFinish;
 
     private void Start()
     {
@@ -25,6 +26,11 @@ public class NormalBabies : MonoBehaviour
     {
         if (col.transform.CompareTag("Player"))
         {
+            if (isFinish)
+            {
+                FindObjectOfType<MenuManager>().NextLevel();
+            }
+
             col.transform.GetComponent<PlayerController>().IncreasingHealth(health);
             babyBar.transform.GetComponent<BabyBar>().IncreasingBabySlider(health);
 
@@ -42,7 +48,10 @@ public class NormalBabies : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position,_babyIcon.transform.position, turnSpeed);
+            if (transform.position != _babyIcon.transform.position)
+                transform.position = Vector3.MoveTowards(transform.position, _babyIcon.transform.position, turnSpeed);
+            else
+                Destroy(gameObject);
         }
     }
 
