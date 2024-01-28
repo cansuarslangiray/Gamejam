@@ -87,10 +87,14 @@ public class FlappyBirdManager : MonoBehaviour
         }
 
         GameObject[] fallBabyPrefabs = GameObject.FindGameObjectsWithTag("FallBaby");
-        for (int i = 0; i < pipes.Length; i++)
+        if (fallBabyPrefabs.Length != 0)
         {
-            Destroy(fallBabyPrefabs[i].gameObject);
+            for (int i = 0; i < pipes.Length; i++)
+            {
+                Destroy(fallBabyPrefabs[i].gameObject);
+            }
         }
+        
     }
 
     public void Pause()
