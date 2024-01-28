@@ -57,6 +57,10 @@ namespace AngryBirds
                 movementVector.x = xPosition;
                 transform.position = movementVector;
             }
+            else
+            {
+                playerAnimator.SetFloat(Horizontal, 0);
+            }
         }
         
         public void ReloadBaby()
