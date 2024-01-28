@@ -77,6 +77,11 @@ public class Movement : MonoBehaviour
         calculateInterval();
     }
 
+    public int getHealth()
+    {
+        return health;
+    }
+
     public void calculateInterval()
     {
         interval = 5 - health / 20;
