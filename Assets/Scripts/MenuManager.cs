@@ -56,6 +56,10 @@ public class MenuManager : MonoBehaviour
         {
             NextLevel();
         }
+        else if (Input.GetKeyDown(KeyCode.M))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     public void LoadDesiredLevel(int levelIndex)
