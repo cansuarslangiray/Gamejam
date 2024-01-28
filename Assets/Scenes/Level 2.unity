@@ -1758,6 +1758,7 @@ MonoBehaviour:
   tempText: {fileID: 383283235}
   slider: {fileID: 656436023}
   DeathGUI: {fileID: 129411251}
+  animator: {fileID: 0}
 --- !u!212 &1427624164
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2676,6 +2677,7 @@ GameObject:
   - component: {fileID: 1827411432}
   - component: {fileID: 1827411431}
   - component: {fileID: 1827411430}
+  - component: {fileID: 1827411433}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2724,6 +2726,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827411433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827411429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ce6d1ab1849df4b833b279838b6093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiElements: {fileID: 4113533029370891504, guid: c19467035b498ec43ac11d3948427bef, type: 3}
+  displayTime: 4
 --- !u!1 &1834333081
 GameObject:
   m_ObjectHideFlags: 0
