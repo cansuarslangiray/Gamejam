@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_0"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 264
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f11e40df94b4c4880e5482f715ec99
+      internalID: 677057063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_1"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 265
+        width: 45
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85852ddcb1f24812a4042a6c61bf960
+      internalID: 1891677681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_2"
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 265
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a4518436aa744d29693c940f3d17ee
+      internalID: -2024431915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_3"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 137
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce5e8e7e1657483a8e1985f6d7f80ff
+      internalID: 1834844669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_4"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 137
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6719928cebf30447c93e528c4f0ea1d0
+      internalID: -627129896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_5"
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 137
+        width: 45
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e53abb993bb84c7d8a233708912cdd3
+      internalID: 942993658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_6"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 8
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5f16b88cd8b4e8f803edf752727f60
+      internalID: 328072391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE7inlibebekf\u0131rlatmaeylem_7"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 8
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08cedc2747d34e008d331ac3181188f
+      internalID: -2084448118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +300,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\xE7inlibebekf\u0131rlatmaeylem_0": 677057063
+      "\xE7inlibebekf\u0131rlatmaeylem_1": 1891677681
+      "\xE7inlibebekf\u0131rlatmaeylem_2": -2024431915
+      "\xE7inlibebekf\u0131rlatmaeylem_3": 1834844669
+      "\xE7inlibebekf\u0131rlatmaeylem_4": -627129896
+      "\xE7inlibebekf\u0131rlatmaeylem_5": 942993658
+      "\xE7inlibebekf\u0131rlatmaeylem_6": 328072391
+      "\xE7inlibebekf\u0131rlatmaeylem_7": -2084448118
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
