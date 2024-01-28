@@ -39,6 +39,11 @@ public class FlappyBirdManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    public int getHouseBabyDropped()
+    {
+        return houseBabyDroped;
+    }
+
     public void IncreaseHouseBabyDroped()
     {
         houseBabyDroped++;

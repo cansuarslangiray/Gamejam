@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: leylekyuvalar_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 128
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.52703846, y: 0.3404286}
+      border: {x: 11, y: 0, z: 9, w: 45}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c76f0d2bbd3d4927b2c5dcc46f3e91b
+      internalID: 1411708096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leylekyuvalar_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 128
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5135193, y: 0.32713068}
+      border: {x: 11, y: 30, z: 8, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7909c8e26c14abdb36965b15b9379e
+      internalID: -1295419401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leylekyuvalar_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 128
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5270378, y: 0.3271309}
+      border: {x: 11, y: 24, z: 9, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c246d89ec2c9f4d13ac2456a58f7998a
+      internalID: -675795502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leylekyuvalar_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 64
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.37588888}
+      border: {x: 11, y: 29, z: 9, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30bfff1733ef840e48f1b6eed70656bb
+      internalID: 1118276989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leylekyuvalar_4
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 64
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.50675964, y: 0.34929368}
+      border: {x: 11, y: 23, z: 9, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230ed5ae6a53143d88ad602cc935e75e
+      internalID: -1974446408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leylekyuvalar_5
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 64
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5202786, y: 0.37588888}
+      border: {x: 11, y: 33, z: 9, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e783a5724e09b4aa1951f75c19070ef0
+      internalID: 335645342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leylekyuvalar_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 40
+        height: 61
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.35815895}
+      border: {x: 11, y: 0, z: 9, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a2a276d887b48b88b5d3e1798a601d
+      internalID: -779834416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +279,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leylekyuvalar_0: 1411708096
+      leylekyuvalar_1: -1295419401
+      leylekyuvalar_2: -675795502
+      leylekyuvalar_3: 1118276989
+      leylekyuvalar_4: -1974446408
+      leylekyuvalar_5: 335645342
+      leylekyuvalar_6: -779834416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

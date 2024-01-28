@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public float maxHeight = 1f;
     public float babyChance;
     public float houseChance;
+    public Sprite[] sprites;
 
 
     public void OnEnable()
@@ -35,10 +36,12 @@ public class Spawner : MonoBehaviour
 
         //house enable chance
         int tempRandom2 = Random.RandomRange(0, 100);
+        int tempRandom3 = Random.RandomRange(0, sprites.Length);
 
-        if(tempRandom2 < houseChance)
+        if (tempRandom2 < houseChance)
         {
             pipes.transform.GetChild(4).gameObject.SetActive(true);
+            pipes.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().sprite = sprites[tempRandom3];
         }
         
     }

@@ -10,11 +10,14 @@ public class Player : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     private int spriteIndex;
+    public GameObject gamemanager;
+    public AudioSource flapSound;
 
 
     public void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        gamemanager = GameObject.FindWithTag("GameManager");
     }
 
     public void Start()
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)|| Input.GetMouseButtonDown(0))
         {
             direction = Vector3.up * strength;
+            flapSound.Play();
         }
 
         if(Input.touchCount > 0)
@@ -44,6 +48,13 @@ public class Player : MonoBehaviour
         direction.y += gravity * Time.deltaTime;
         transform.position += direction * Time.deltaTime;
 
+        Debug.Log("Number of house baby droped");
+        if (gamemanager.GetComponent<FlappyBirdManager>().getHouseBabyDropped()>=20)
+        {
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            Debug.Log("Should go next scene");
+            FindObjectOfType<MenuManager>().NextLevel();
+        }
     }
 
     public void AnimateSprite()

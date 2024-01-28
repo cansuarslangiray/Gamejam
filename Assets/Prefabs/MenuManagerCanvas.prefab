@@ -254,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelButtons: {fileID: 4784452350003354067}
   levelsToggleButton: {fileID: 7230224267627309609}
+  darkPanel: {fileID: 5884884898916990330}
 --- !u!1 &650389744538801260
 GameObject:
   m_ObjectHideFlags: 0
