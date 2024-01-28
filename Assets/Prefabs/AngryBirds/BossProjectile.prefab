@@ -105,7 +105,7 @@ MonoBehaviour:
   player: {fileID: 0}
   explosionSize: {x: 10, y: 10}
   spriteRenderer: {fileID: 2836163837477333535}
-  boxCollider2D: {fileID: 0}
+  boxCollider2D: {fileID: 6459606630147198668}
 --- !u!50 &-1763803040384266568
 Rigidbody2D:
   serializedVersion: 4

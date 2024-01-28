@@ -18,8 +18,10 @@ namespace AngryBirds
         [SerializeField] private GameManager gameManager;
         [SerializeField] private CircleCollider2D circleCollider;
         [SerializeField] private GameObject container;
+        public Animator playerAnimator;
         private Plane _inputPlane;
         private Camera _camera;
+        private static readonly int Shoot = Animator.StringToHash("Shoot");
 
         private void Start()
         {
@@ -67,14 +69,9 @@ namespace AngryBirds
 
             if (isDragging && Input.GetMouseButtonUp(0))
             {
-                rb.gravityScale = 1;
-                transform.SetParent(container.transform);
-                gameManager.SetCamera(FocusedCamera.Baby);
                 directionVisualizer.gameObject.SetActive(false);
-                if (currentPower > 1)
-                {
-                    rb.AddForce(transform.up * (currentPower * 10), ForceMode2D.Impulse);
-                }
+                playerAnimator.SetTrigger(Shoot);
+               
                 isDragging = false;
             }
         }
@@ -83,6 +80,16 @@ namespace AngryBirds
         {
             return currentPower;
         }
+
+        public void SetValues()
+        {
+            rb.gravityScale = 1;
+            transform.SetParent(container.transform);
+            gameManager.SetCamera(FocusedCamera.Baby);
+            
+        }
+        
+        
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -94,6 +101,14 @@ namespace AngryBirds
             GameManager.BossTurn.Invoke();
             rb.gravityScale = 0;
             gameObject.SetActive(false);
+        }
+
+        public void ShootTheThing()
+        {
+            if (currentPower > 1)
+            {
+                rb.AddForce(transform.up * (currentPower * 10), ForceMode2D.Impulse);
+            }
         }
     }
 }

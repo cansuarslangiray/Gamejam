@@ -12,7 +12,7 @@ namespace AngryBirds
         public PlayerMovement player;
         public Vector2 explosionSize;
         public SpriteRenderer spriteRenderer;
-        public BoxCollider2D boxCollider2D;
+        public CapsuleCollider2D boxCollider2D;
 
         private void Start()
         {

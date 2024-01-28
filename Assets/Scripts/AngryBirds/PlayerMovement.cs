@@ -58,11 +58,12 @@ namespace AngryBirds
             var baby = ObjectPool.SharedInstance.GetPooledObject();
             if (baby != null)
             {
-                baby.transform.position = transform.position + Vector3.one * 5;
+                baby.transform.position = transform.position + Vector3.right * 8;
                 baby.transform.SetParent(this.transform);
                 baby.SetActive(true);
             }
             currentBaby = baby.GetComponent<BabyHead>();
+            currentBaby.playerAnimator = GetComponent<Animator>();
             babyCamera.Follow = baby.transform;
             babyCamera.LookAt = baby.transform;
         }
@@ -70,6 +71,12 @@ namespace AngryBirds
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
+        }
+
+        public void Shoot()
+        {
+            currentBaby.ShootTheThing();
+            currentBaby.SetValues();
         }
     }
 }
