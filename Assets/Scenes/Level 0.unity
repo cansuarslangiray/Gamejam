@@ -1306,18 +1306,19 @@ MonoBehaviour:
   m_text: 'Credits:
 
 
-    Berke Parildar
+    Berke Parildar - Developer
 
-    Cansu Artslangiray
+    Cansu Arslangiray - Developer
 
-    Ece Cizmecioglu
+    Ece
+    Cizmecioglu - 2D Artist
 
-    Can
-    Caliskan
+    Can Caliskan - Developer
 
-    Eren Koselerli
+    Eren Koselerli - Developer
 
-    Alperen Uzun'
+    Alperen
+    Uzun - Level Design, Art/Dev Support, Team Lead'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0717c6ae8411c84c85f3fa6e0b7ec00, type: 2}
   m_sharedMaterial: {fileID: 6050724819374794085, guid: e0717c6ae8411c84c85f3fa6e0b7ec00, type: 2}
