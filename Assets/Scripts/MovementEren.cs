@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     public Slider slider;
     private float sliderTime;
     public GameObject DeathGUI;
+    public Animator animator;
 
     
 
@@ -42,6 +43,8 @@ public class Movement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2 (x, y)*speed;
+
+        animator.SetFloat("Horizontal",x);
 
         /*var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
