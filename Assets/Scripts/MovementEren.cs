@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour
     public int maxAmmo;
     public Transform crossHair;
     public TextMeshProUGUI tempText;
+    public Slider slider;
+    private float sliderTime;
 
     
 
@@ -55,16 +57,28 @@ public class Movement : MonoBehaviour
             ammo--;
         }
 
-        time += Time.deltaTime;
+        
 
-        if (time>interval)
+        if (ammo != maxAmmo)
         {
-            if(!(ammo+1>maxAmmo))
+            time += Time.deltaTime;
+            var tempTime = time / interval * 20;
+
+            slider.value = tempTime;
+
+            if (time > interval)
             {
-                ammo += 1;
+                if (!(ammo + 1 > maxAmmo))
+                {
+                    ammo += 1;
+                }
+                time = 0;
             }
-            time = 0;
         }
+
+        
+
+        
 
 
 
@@ -94,6 +108,6 @@ public class Movement : MonoBehaviour
 
     public void calculateInterval()
     {
-        interval = 5 - health / 20;
+        interval = 5 - health / 5;
     }
 }

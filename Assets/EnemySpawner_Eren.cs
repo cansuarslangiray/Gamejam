@@ -15,6 +15,7 @@ public class EnemySpawner_Eren : MonoBehaviour
     private float Xpos;
     private float Ypos;
     public float time;
+    public float timeNeeded;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class EnemySpawner_Eren : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time > 5)
+        if (time > timeNeeded)
         {
             int random = Random.Range(1, 4);
 
