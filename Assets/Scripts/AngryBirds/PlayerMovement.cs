@@ -2,6 +2,7 @@ using System;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace AngryBirds
 {
@@ -15,7 +16,10 @@ namespace AngryBirds
         [SerializeField] private int maxHealth;
         [SerializeField] private int currentHealth;
         [SerializeField] private Slider playerHealth;
-        
+        [SerializeField] private Sprite[] sprites;
+        [SerializeField] private Animator playerAnimator;
+        private static readonly int Horizontal = Animator.StringToHash("horizontal");
+
         private void Start()
         {
             currentHealth = maxHealth;
@@ -37,6 +41,8 @@ namespace AngryBirds
         {
             if (!GameManager.PlayerTurn)
             {
+                var horziontalInput = Input.GetAxis("Horizontal");
+                playerAnimator.SetFloat(Horizontal, horziontalInput);
                 if (Input.GetKey(KeyCode.A))
                 {
                     xPosition -= Time.deltaTime * horizontalSpeed;
@@ -59,7 +65,8 @@ namespace AngryBirds
             if (baby != null)
             {
                 baby.transform.position = transform.position + Vector3.right * 8;
-                baby.transform.SetParent(this.transform);
+                baby.transform.SetParent(transform);
+                baby.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
                 baby.SetActive(true);
             }
             currentBaby = baby.GetComponent<BabyHead>();

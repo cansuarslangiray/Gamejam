@@ -9,6 +9,7 @@ public class CrawlingBabies : MonoBehaviour
     public int health = 2;
     private float speed;
     private GameObject _babyIcon;
+    private GameObject _babyIcon1;
     public CapsuleCollider2D cd;
     public float turnSpeed;
     public bool hasCollided = true;
@@ -17,6 +18,7 @@ public class CrawlingBabies : MonoBehaviour
     private void Start()
     {
         _babyIcon = GameObject.Find("BabyIcon");
+        _babyIcon1 = GameObject.Find("BabyIcon1");
         babyBar = GameObject.Find("GameManager");
         cd = GetComponent<CapsuleCollider2D>();
         speed = FindObjectOfType<GenerateLevel>().speed;
@@ -51,7 +53,10 @@ public class CrawlingBabies : MonoBehaviour
         }
         else
         {
+            if (transform.position != _babyIcon.transform.position)
             transform.position = Vector3.MoveTowards(transform.position, _babyIcon.transform.position, turnSpeed);
+            else
+                Destroy(gameObject);
         }
     }
 

@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5427528479711066067}
   - component: {fileID: 1343270580249058989}
   m_Layer: 0
-  m_Name: "k\u0131vrananbebek"
+  m_Name: kivrananbebek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 2399698891889496806}
   - component: {fileID: 9027496316726860835}
   - component: {fileID: 5452174025299171090}
+  - component: {fileID: 3373974088302842845}
   m_Layer: 0
   m_Name: 'NormalBabies '
   m_TagString: Untagged
@@ -201,6 +202,7 @@ Transform:
   m_Children:
   - {fileID: 5427528479711066067}
   - {fileID: 4501687096012907417}
+  - {fileID: 6049551967480108690}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9027496316726860835
@@ -268,7 +270,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  speed: 0
-  cd: {fileID: 0}
-  turnSpeed: 0
+  speed: 2
+  cd: {fileID: 3373974088302842845}
+  turnSpeed: 2
   hasCollided: 1
+--- !u!70 &3373974088302842845
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061879790117086549}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.52}
+  m_Size: {x: 1, y: 1.92}
+  m_Direction: 0
+--- !u!1001 &949407011757024117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2399698891889496806}
+    m_Modifications:
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613320621491021847, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+      propertyPath: m_Name
+      value: GreenFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+--- !u!4 &6049551967480108690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6834401360564205031, guid: 8f6f319306cdd1243975d3b23cfb8ba3, type: 3}
+  m_PrefabInstance: {fileID: 949407011757024117}
+  m_PrefabAsset: {fileID: 0}

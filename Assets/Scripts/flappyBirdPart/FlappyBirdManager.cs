@@ -42,7 +42,7 @@ public class FlappyBirdManager : MonoBehaviour
     public void IncreaseHouseBabyDroped()
     {
         houseBabyDroped++;
-        houseBabyDropedText.text = houseBabyDroped.ToString();
+        houseBabyDropedText.text = houseBabyDroped.ToString() + ("/20");
         
     }
     
@@ -73,7 +73,7 @@ public class FlappyBirdManager : MonoBehaviour
         score = 0;
         houseBabyDroped = 0;
         scoreText.text = score.ToString();
-        houseBabyDropedText.text = score.ToString();
+        houseBabyDropedText.text = houseBabyDroped.ToString() + ("/20");
         playButton.SetActive(false);
         gameOver.SetActive(false);
 
