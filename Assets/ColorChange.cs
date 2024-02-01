@@ -13,21 +13,25 @@ public class ColorChange : MonoBehaviour
     [SerializeField] Color color3;
     private int colorIndex;
     private MenuManager menuManager;
+    private bool isDone;
 
     void Start()
     {
+        print("timeis" + Time.time);
         renderer = GetComponent<SpriteRenderer>();
         menuManager = GameObject.FindAnyObjectByType<MenuManager>();
     }
 
     void Update()
     {
-        if (Time.time > 60)
-        {
 
+        if (colorIndex >1 && !isDone)
+        {
+            isDone = true;
+            print("LION");
             FindObjectOfType<MenuManager>().NextLevel();
         }
-        print("TEST " + Time.time);
+        //print("TEST " + Time.time);
         if (colorIndex < 1)
         {
             time = Time.time / 30;

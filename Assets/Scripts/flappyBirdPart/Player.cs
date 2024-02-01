@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             Debug.Log("Should go next scene");
+            print("ALLIGATOR");
             FindObjectOfType<MenuManager>().NextLevel();
         }
     }

@@ -28,6 +28,7 @@ public class NormalBabies : MonoBehaviour
         {
             if (isFinish)
             {
+                print("CROC");
                 FindObjectOfType<MenuManager>().NextLevel();
             }
 

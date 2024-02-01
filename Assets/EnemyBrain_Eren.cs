@@ -56,7 +56,7 @@ public class EnemyBrain_Eren : MonoBehaviour
     {
         if (collision.gameObject.tag=="Player") 
         {
-            Debug.Log("Bebeði çaldým");
+            Debug.Log("Bebeggi ccaldiim");
             animator.SetTrigger("Steal");
             Movement movement = collision.gameObject.GetComponent<Movement>();
             movement.setHealth(-1);

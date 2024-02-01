@@ -84,7 +84,7 @@ public class BoringEnemy_Eren : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Bebeði çaldým");
+            Debug.Log("Bebegi caldim");
             if (!haveBaby)
             {
                 animator.SetTrigger("Steal");
